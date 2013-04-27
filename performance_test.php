@@ -23,7 +23,7 @@ for ($i = 0; $i < $repeats; $i++) {
     $Redis->get('test');
 }
 $proxy_time = microtime(true) - $time;
-echo "RedisPinba psoxy time: " . round($proxy_time, 5) . "s\n";
+echo "RedisPinba proxy time: " . round($proxy_time, 5) . "s\n";
 
 $per_req = ($proxy_time - $raw_time) / $repeats;
 echo "Slowdown: " . round($proxy_time / $raw_time, 5) . "x, " . sprintf("%.7f", $per_req) . "s per request\n";
