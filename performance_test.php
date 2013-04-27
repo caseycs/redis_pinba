@@ -12,7 +12,7 @@ for ($i = 0; $i < $repeats; $i++) {
     $Redis->get('test');
 }
 $raw_time = microtime(true) - $time;
-echo "Redis raw time: " . round($raw_time, 5) . "s\n";
+echo "Redis time: " . round($raw_time, 5) . "s\n";
 
 /* @var \Redis $Redis */
 $Redis = new RedisPinba\RedisPinba;
@@ -23,7 +23,7 @@ for ($i = 0; $i < $repeats; $i++) {
     $Redis->get('test');
 }
 $proxy_time = microtime(true) - $time;
-echo "RedisPinba proxy time: " . round($proxy_time, 5) . "s\n";
+echo "RedisPinba time: " . round($proxy_time, 5) . "s\n";
 
 $per_req = ($proxy_time - $raw_time) / $repeats;
 echo "Slowdown: " . round($proxy_time / $raw_time, 5) . "x, " . sprintf("%.7f", $per_req) . "s per request\n";
