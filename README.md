@@ -1,4 +1,6 @@
 redis_pinba
 ===========
 
-Wrapper to PHP Redis exrension https://github.com/nicolasff/phpredis with pinba timers
+Wrapper to PHP [nicolasff Redis extension](https://github.com/nicolasff/phpredis) with Pinba timers.
+
+Learn more about Pinba: http://pinba.org/
